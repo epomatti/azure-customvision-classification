@@ -1,3 +1,7 @@
+# App
+.vscode
+images
+
 # Logs
 logs
 *.log

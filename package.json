@@ -1,0 +1,28 @@
+{
+  "name": "azure-customvision-benchmark",
+  "version": "1.0.0",
+  "description": "Training &amp; Prediction with Azure Cognitive Services Custom Vision.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epomatti/azure-customvision-benchmark.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/epomatti/azure-customvision-benchmark/issues"
+  },
+  "homepage": "https://github.com/epomatti/azure-customvision-benchmark#readme",
+  "dependencies": {
+    "@azure/cognitiveservices-customvision-training": "^5.1.2",
+    "@azure/ms-rest-js": "^2.0.8",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
