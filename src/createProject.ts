@@ -11,7 +11,6 @@ async function main() {
 
     const options: TrainingAPIModels.TrainingAPIClientCreateProjectOptionalParams = {
         classificationType: "Multiclass"
-        // TODO set domain type to ObjectDetection - Waiting for issue #10358
     };
 
     const project = await client.createProject(projectName, options)
