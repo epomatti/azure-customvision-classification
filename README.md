@@ -18,7 +18,7 @@ Go to [customvision.ai](https://www.customvision.ai/projects#/settings) resource
 
 <img src="docs/resource.png"/>
 
-You may also get these values from the Azure Portal.
+You may also get these values from the Azure Portal. I opened issue [#14595](https://github.com/Azure/azure-cli/issues/14595) to get the Key using the CLI.
 
 Now add the values to the `.env` file:
 
