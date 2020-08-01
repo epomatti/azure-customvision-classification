@@ -63,7 +63,8 @@ Your data sample must match this directory structure.
 First you need to create your project and tags:
 
 ```sh
-ts-node src/createProject.ts
+$ ts-node src/createProject.ts
+Project created. Add the ID to the .env file: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
 Add the project ID to the `.env` file:
