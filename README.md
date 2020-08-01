@@ -18,7 +18,7 @@ Go to [customvision.ai](https://www.customvision.ai/projects#/settings) resource
 
 <img src="docs/resource.png"/>
 
-You may also get the values from Azure Portal.
+You may also get these values from Azure Portal.
 
 Now add the values to the `.env` file:
 
@@ -31,7 +31,7 @@ predictionResourceId=<prediction_resource_id>
 :information_source: _Custom Vision recommends at least 50 images per set to ensure model performance. 
 Following the rule of thumb 70/30 you should have at least 15 additional images for the prediction tests._
 
-Set the project name:
+Set the project name in the `.env` file:
 
 ```
 projectName=<your_project_name>
@@ -63,7 +63,8 @@ Your data sample must match this directory structure.
 First you need to create your project and tags:
 
 ```sh
-ts-node src/createProject.ts
+$ ts-node src/createProject.ts
+Project created. Add the ID to the .env file: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
 Add the project ID to the `.env` file:
