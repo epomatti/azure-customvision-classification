@@ -121,6 +121,10 @@ Results for [border_collie]:
          husky: 0.00%
 ```
 
+You may go to the portal now and see the results:
+
+<img src="docs/results.png"/>
+
 ## References
 
 [Custom Vision with SDK](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/image-classification?pivots=programming-language-javascript)
