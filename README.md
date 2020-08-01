@@ -2,7 +2,7 @@
 
 Automated programs for training and prediction tasks using Azure Custom Vision (Cognitive Services).
 
-:information_source: _Currently it only performs Classification, as I'm waiting for issue [#10358](https://github.com/Azure/azure-sdk-for-js/issues/10358) to implement Object Detection._
+:information_source: _Currently my code does Classification, as I'm waiting for issue [#10358](https://github.com/Azure/azure-sdk-for-js/issues/10358) to implement Object Detection with the JavaScript SDK._
 
 <img src="docs/doggo.png"/>
 
