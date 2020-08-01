@@ -4,6 +4,7 @@ import { TrainingAPIModels } from "@azure/cognitiveservices-customvision-trainin
 require('dotenv').config()
 
 const tagsVar = process.env["tags"]
+const projectName = process.env["projectName"]
 
 async function main() {
     const client = getTrainingClient();
@@ -13,8 +14,8 @@ async function main() {
         // TODO set domain type to ObjectDetection - Waiting for issue #10358
     };
 
-    const project = await client.createProject("benchmark", options)
-    console.log(`Project create with ID ${project.id}. Add it to .env file`)
+    const project = await client.createProject(projectName, options)
+    console.log(`Project created. Add the ID to the .env file: ${project.id}`)
 
     const tagNames = tagsVar.split(",");
     const tagPromises = []

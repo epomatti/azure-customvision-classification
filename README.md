@@ -2,17 +2,25 @@
 
 Automated programs for training and prediction tasks using Azure Custom Vision (Cognitive Services).
 
+<img src="docs/doggo.png"/>
+
 ## Setup
 
-### Create the Cognitive Services resource
-
-Example with Azure CLI:
+Create the Cognitive Services resource:
 
 ```
 az cognitiveservices account create -n <name> -g <group> --kind CognitiveServices --sku S0 -l eastus --yes
 ```
 
+You can also use `--sku F0` which is the free tier.
+
 Go to [customvision.ai](https://www.customvision.ai/projects#/settings) resources and copy the folling parameters:
+
+<img src="docs/resource.png"/>
+
+You may also get the values from Azure Portal.
+
+Now add the values to the `.env` file:
 
 ```
 customVisionTrainingKey=<training_key>
@@ -20,12 +28,14 @@ customVisionTrainingEndPoint=<endpoint>
 predictionResourceId=<prediction_resource_id>
 ```
 
-Add these values to `.env`
-
 :information_source: _Custom Vision recommends at least 50 images per set to ensure model performance. 
 Following the rule of thumb 70/30 you should have at least 15 additional images for the prediction tests._
 
-### Prepare the Tags & Image Samples
+Set the project name:
+
+```
+projectName=<your_project_name>
+```
 
 Add your samples path to the `.env` file:
 
@@ -81,9 +91,18 @@ Run the prediction tests:
 ts-node src/prediction.ts
 ```
 
-## References
+You'll get an output for each image according to it's associated tag:
 
-Custom Vision Portal: https://www.customvision.ai
+```
+Results for [husky]:
+         husky: 100.00%
+         border_collie: 0.00%
+Results for [border_collie]:
+         border_collie: 100.00%
+         husky: 0.00%
+```
+
+## References
 
 [Custom Vision with SDK](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/image-classification?pivots=programming-language-javascript)
 
