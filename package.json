@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/epomatti/azure-customvision-benchmark#readme",
   "dependencies": {
+    "@azure/cognitiveservices-customvision-prediction": "^5.1.2",
     "@azure/cognitiveservices-customvision-training": "^5.1.2",
     "@azure/ms-rest-js": "^2.0.8",
     "dotenv": "^8.2.0"

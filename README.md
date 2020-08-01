@@ -2,23 +2,21 @@
 
 This app is under development.
 
-## Getting Started
+## Setup
 
-### 1 - Prepare the image sets
+Custom Vision recommends at least 50 images per set to ensure model performance. 
 
-Create a directory named `images` in the project root.
+Following the rule of thumb 70/30 you should have at least 15 additional images for the prediction tests.
 
-Each directory under `images` will be converted to a tag, and each image will be uploaded to Custom Vision.
-
-In the `.env` file create the tags separated by `,` like this:
+Add the tags to the `.env` file separeted by commas (`,`):
 
 ```
 tags=tag1,tag2,tag3
 ```
 
-The algorithm is currently limited to **64 images** for convenience.
+My algorithm is limited to send a single batch of 64 images. Help me with a pull request :grin:
 
-### 2 - Run the code
+## Training
 
 Create the Cognitive Service resource in Azure:
 

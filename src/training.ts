@@ -1,4 +1,4 @@
-import { getTrainingClient } from "./cognitive-services"
+import { getTrainingClient } from "./cognitiveServices"
 
 require('dotenv').config()
 

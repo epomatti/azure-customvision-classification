@@ -1,4 +1,4 @@
-import { getTrainingClient } from "./cognitive-services"
+import { getTrainingClient } from "./cognitiveServices"
 import { TrainingAPIModels } from "@azure/cognitiveservices-customvision-training";
 
 require('dotenv').config()

@@ -1,18 +1,14 @@
-import { getTrainingClient } from "./cognitive-services"
+import { getTrainingClient } from "./cognitiveServices"
 import * as fs from 'fs';
 import { ImageFileCreateEntry, ImageFileCreateBatch } from "@azure/cognitiveservices-customvision-training/esm/models";
 
 require('dotenv').config()
 
 const projectId = process.env["projectId"]
-const sampleDataRoot = process.env["sampleDataRoot"]
+const trainingSampleDataRoot = process.env["trainingSampleDataRoot"]
 
 if (projectId === undefined || projectId.length === 0) {
     throw new Error("You must set the project ID");
-}
-
-if (sampleDataRoot === undefined || sampleDataRoot.length === 0) {
-    throw new Error("You must set the sample data root");
 }
 
 async function main() {
@@ -21,11 +17,11 @@ async function main() {
 
     let fileUploadPromises = [];
     tags.forEach(tag => {
-        const imageFiles = fs.readdirSync(`${sampleDataRoot}/${tag.name}`);
+        const imageFiles = fs.readdirSync(`${trainingSampleDataRoot}/${tag.name}`);
         const files: ImageFileCreateEntry[] = []
         const chunk = imageFiles.slice(0, 64)
         chunk.forEach(file => {
-            const data = fs.readFileSync(`${sampleDataRoot}/${tag.name}/${file}`)
+            const data = fs.readFileSync(`${trainingSampleDataRoot}/${tag.name}/${file}`)
             const fileEntry: ImageFileCreateEntry = { name: file, contents: data }
             files.push(fileEntry);
         })
