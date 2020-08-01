@@ -18,7 +18,7 @@ Go to [customvision.ai](https://www.customvision.ai/projects#/settings) resource
 
 <img src="docs/resource.png"/>
 
-You may also get these values from Azure Portal.
+You may also get these values from the Azure Portal.
 
 Now add the values to the `.env` file:
 
