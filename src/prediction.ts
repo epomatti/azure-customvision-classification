@@ -10,9 +10,9 @@ async function main() {
     const client = getPredictionClient()
     const tagNames = tagsVar.split(",");
 
-    for await (const tag of tagNames) {
+    for (const tag of tagNames) {
         const imageFiles = fs.readdirSync(`${predictionSampleDataRoot}/${tag}`);
-        for await (const file of imageFiles) {
+        for (const file of imageFiles) {
             const data = fs.readFileSync(`${predictionSampleDataRoot}/${tag}/${file}`)
             const results = await client.classifyImage(projectId, "benchmark", data);
             console.log(`Results for [${tag}]:`);
