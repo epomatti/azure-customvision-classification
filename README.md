@@ -31,7 +31,7 @@ predictionResourceId=<prediction_resource_id>
 :information_source: _Custom Vision recommends at least 50 images per set to ensure model performance. 
 Following the rule of thumb 70/30 you should have at least 15 additional images for the prediction tests._
 
-Set the project name:
+Set the project name in the `.env` file:
 
 ```
 projectName=<your_project_name>
