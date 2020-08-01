@@ -4,6 +4,7 @@ require('dotenv').config()
 
 const projectId = process.env["projectId"]
 const predictionResourceId = process.env["predictionResourceId"]
+const publishName = process.env["publishName"]
 
 
 if (projectId === undefined || projectId.length === 0) {
@@ -24,13 +25,13 @@ async function main() {
     console.log("Training started...");
     while (trainingIteration.status == "Training") {
         console.log("Training status: " + trainingIteration.status);
-        setTimeout(() => { }, 2000);
+        await new Promise(resolve => setTimeout(resolve, 2000));
         trainingIteration = await client.getIteration(projectId, trainingIteration.id)
     }
     console.log("Training status: " + trainingIteration.status);
 
     // Publish the iteration to the end point
-    await client.publishIteration(projectId, trainingIteration.id, "benchmark", predictionResourceId);
+    await client.publishIteration(projectId, trainingIteration.id, publishName, predictionResourceId);
 
 }
 main()

@@ -22,6 +22,12 @@ Go to [customvision.ai](https://www.customvision.ai/projects#/settings) resource
 
 You may also get these values from the Azure Portal. I opened issue [#14595](https://github.com/Azure/azure-cli/issues/14595) to get the Key using the CLI.
 
+Start by copying the sample `.env`:
+
+```
+cp .env.sample .env
+```
+
 Now add the values to the `.env` file:
 
 ```
@@ -33,10 +39,11 @@ predictionResourceId=<prediction_resource_id>
 :information_source: _Custom Vision recommends at least 50 images per set to ensure model performance. 
 Following the rule of thumb 70/30 you should have at least 15 additional images for the prediction tests._
 
-Set the project name in the `.env` file:
+Set the `project name` and `publish name` in the `.env` file:
 
 ```
 projectName=<your_project_name>
+publishName=<publish_name>
 ```
 
 Add your samples path to the `.env` file:
@@ -72,6 +79,7 @@ First you need to create your project and tags:
 
 ```sh
 $ ts-node src/createProject.ts
+
 Project created. Add the ID to the .env file: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
 
@@ -99,6 +107,8 @@ Run the prediction tests:
 ```sh
 ts-node src/prediction.ts
 ```
+
+This will also publish the iteration. You must unpublish previous iterations on customvision.ai if you with publish new ones.
 
 You'll get an output for each image according to it's associated tag:
 
