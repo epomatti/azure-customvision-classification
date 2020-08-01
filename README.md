@@ -16,6 +16,8 @@ In the `.env` file create the tags separated by `,` like this:
 tags=tag1,tag2,tag3
 ```
 
+The algorithm is currently limited to **64 images** for convenience.
+
 ### 2 - Run the code
 
 Create the Cognitive Service resource in Azure:
@@ -40,3 +42,5 @@ create-tags.ts
 Custom Vision Portal: https://www.customvision.ai
 
 [Custom Vision with SDK](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/quickstarts/image-classification?pivots=programming-language-javascript)
+
+[Custom Vision Service Limits and Quotas](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/limits-and-quotas)
