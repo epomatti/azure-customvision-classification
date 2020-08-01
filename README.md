@@ -62,6 +62,12 @@ Your data sample must match this directory structure.
 
 ## Training and Prediction
 
+If you haven't already, download the dependencies:
+
+```sh
+npm install
+```
+
 First you need to create your project and tags:
 
 ```sh
