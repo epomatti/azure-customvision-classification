@@ -108,7 +108,7 @@ Run the prediction tests:
 ts-node src/prediction.ts
 ```
 
-This will also publish the iteration. You must unpublish previous iterations on customvision.ai if you with publish new ones.
+This will also publish the iteration. You must unpublish previous iterations on the Performance tab at [customvision.ai](https://www.customvision.ai) if you with publish new ones.
 
 You'll get an output for each image according to it's associated tag:
 
