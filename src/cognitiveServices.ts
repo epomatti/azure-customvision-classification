@@ -4,8 +4,8 @@ import { ApiKeyCredentials } from "@azure/ms-rest-js"
 
 require('dotenv').config()
 
-const customVisionTrainingKey = process.env["customVisionTrainingKey"];
-const customVisionTrainingEndPoint = process.env["customVisionTrainingEndPoint"];
+const customVisionTrainingKey = process.env["customVisionTrainingKey"]!;
+const customVisionTrainingEndPoint = process.env["customVisionTrainingEndPoint"]!;
 
 export function getTrainingClient() {
     const credentials = new ApiKeyCredentials({ inHeader: { "Training-key": customVisionTrainingKey } });

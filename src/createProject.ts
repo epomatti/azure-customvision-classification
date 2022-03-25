@@ -3,8 +3,8 @@ import { TrainingAPIModels } from "@azure/cognitiveservices-customvision-trainin
 
 require('dotenv').config()
 
-const tagsVar = process.env["tags"]
-const projectName = process.env["projectName"]
+const tagsVar = process.env["tags"]!
+const projectName = process.env["projectName"]!
 
 async function main() {
     const client = getTrainingClient();
@@ -13,13 +13,13 @@ async function main() {
         classificationType: "Multiclass"
     };
 
-    const project = await client.createProject(projectName, options)
-    console.log(`Project created. Add the ID to the .env file: ${project.id}`)
+    const project = await client.createProject(projectName, options);
+    console.log(`Project created. Add the ID to the .env file: ${project.id!}`)
 
     const tagNames = tagsVar.split(",");
-    const tagPromises = []
+    const tagPromises : any = []
     tagNames.forEach(tag => {
-        tagPromises.push(client.createTag(project.id, tag))
+        tagPromises.push(client.createTag(project.id!, tag))
     })
     
     await Promise.all(tagPromises)

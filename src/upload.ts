@@ -4,8 +4,8 @@ import { ImageFileCreateEntry, ImageFileCreateBatch } from "@azure/cognitiveserv
 
 require('dotenv').config()
 
-const projectId = process.env["projectId"]
-const trainingSampleDataRoot = process.env["trainingSampleDataRoot"]
+const projectId = process.env["projectId"]!
+const trainingSampleDataRoot = process.env["trainingSampleDataRoot"]!
 
 if (projectId === undefined || projectId.length === 0) {
     throw new Error("You must set the project ID");
@@ -15,7 +15,7 @@ async function main() {
     const client = getTrainingClient();
     const tags = await client.getTags(projectId);
 
-    let fileUploadPromises = [];
+    let fileUploadPromises: any = [];
     tags.forEach(tag => {
         const imageFiles = fs.readdirSync(`${trainingSampleDataRoot}/${tag.name}`);
         const files: ImageFileCreateEntry[] = []
@@ -25,7 +25,7 @@ async function main() {
             const fileEntry: ImageFileCreateEntry = { name: file, contents: data }
             files.push(fileEntry);
         })
-        const batch: ImageFileCreateBatch = { images: files, tagIds: [tag.id] }
+        const batch: ImageFileCreateBatch = { images: files, tagIds: [tag.id!] }
         fileUploadPromises.push(client.createImagesFromFiles(projectId, batch))
     })
 
